@@ -8,7 +8,8 @@ const autoprefixer = require("autoprefixer");
 const webpack = require("webpack");
 
 module.exports = {
-    entry: './src/index.js',
+    entry: { "index": "./src/index.js",
+},
     output: {
     path: path.resolve(__dirname, 'dist'),
     filename: "[name].[contenthash].bundle.js"
@@ -39,7 +40,7 @@ module.exports = {
         ),
         new webpack.LoaderOptionsPlugin({
             options: {
-                postcoss: [
+                postcss: [
                     autoprefixer()
                 ]
             }
